@@ -1,11 +1,94 @@
-/* 
+body {
+    
+  font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+  background: linear-gradient(135deg, #fcefee, #e0f7fa);
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+}
 
-    You can write your own styles here...
-    
-    
-    ...Or you can use the import command to include 
-    other sylesheets into your bunde as well, e.j:
-    
-    import 'relative/path/to/stylesheet.scss';
+ .container {
+  background: #fff0f5; 
+  margin-top: 50px;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  width: 500px;
+  text-align: center;
+}
 
-*/
+.container h1 {
+    color: #c2185b;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    font-style: italic;
+    font-weight: 600;
+}
+
+ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+input[type="text"] {
+    width: 90%;
+    padding: 10px;
+    border: 2px; solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+
+}
+
+input[type="text"]:focus {
+  border-color: #6c63ff;
+  outline: none;
+  box-shadow: 0 0 8px rgba(108, 99, 255, 0.3);
+}
+
+li {
+  background: #fff8e1;  
+  margin: 8px 0;
+  padding: 10px 15px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.2s ease, background 0.3s ease; 
+  color: #c2185b;  
+  font-style: italic;
+  font-weight: 500; 
+    
+}
+
+li:hover {
+  transform: scale(1.02);
+  background: #ffe0ec;
+}
+
+button, span {
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: #c2185b;  
+  transition: color 0.3s ease, transform 0.2s ease;
+  background: none;
+  border: none;  
+}
+
+button:hover, span:hover {
+  color: #d90429;
+  transform: rotate(10deg);  
+}
+
+.container div {
+   margin-top: 15px;
+   font-weight: bold;
+   color: #c2185b;  
+   font-style: italic;
+
+
+}

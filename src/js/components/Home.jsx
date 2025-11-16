@@ -1,28 +1,58 @@
-import React from "react";
+import { useState } from "react";
+import "../../styles/index.css";
 
-//include images into your bundle
-import rigoImage from "../../img/rigo-baby.jpg";
 
-//create your first component
 const Home = () => {
-	return (
-		<div className="text-center">
-            
+  const [tareas, setTareas] = useState([
+    "Hacer la compra",
+    "Llevar a Sofia al Dentista",
+    "Clases de Gimnasia Ritmica",
+    "Hacer un Biscocho",
+    "Hacer Maqueta con Sofia",
+  ]);
 
-			<h1 className="text-center mt-5">Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working...
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
-		</div>
-	);
+  const [nuevaTarea, setNuevaTarea] = useState("");
+
+  const agregarTarea = () => {
+    if (nuevaTarea.trim() !== "") {
+      setTareas([...tareas, nuevaTarea]);
+      setNuevaTarea("");
+    }
+  };
+
+  const eliminarTarea = (index) => {
+    setTareas(tareas.filter((_, i) => i !== index));
+  };
+
+  return (
+    <div className="container">
+      <h1>Mi Lista de Tareas Diarias</h1>
+      <ul>
+        <li>
+          <input
+            type="text"
+            placeholder="¿Qué tengo que hacer?"
+            value={nuevaTarea}
+            onChange={(e) => setNuevaTarea(e.target.value)}
+            onKeyDown={(e) => e.key === "Enter" && agregarTarea()}
+          />
+        </li>
+
+        {tareas.map((tarea, index) => (
+          <li key={index}>
+            {tarea}
+            <button onClick={() => eliminarTarea(index)}>✏️</button>
+          </li>
+        ))}
+      </ul>
+
+      {tareas.length === 0 ? (
+        <div>No hay tareas, añade una tarea</div>
+      ) : (
+        <div>{tareas.length} Tareas</div>
+      )}
+    </div>
+  );
 };
 
 export default Home;
