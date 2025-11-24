@@ -37,7 +37,7 @@ ul{
 input[type="text"] {
     width: 90%;
     padding: 10px;
-    border: 2px; solid #ddd;
+    border: 2px solid #ddd;
     border-radius: 8px;
     font-size: 1rem;
     transition: all 0.3s ease;
